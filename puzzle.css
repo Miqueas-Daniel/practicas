@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.overall__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.boxes {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: width 2s ease;
+}
+
+.boxes__ganaste {
+    width: 0;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 0 5px #000;
+    border-radius: 10px;
+    background-color: rgb(52, 0, 194);
+    color: #fff;
+}
+
+.green {
+    background-color: rgb(58, 182, 0);
+}
+
+.red {
+    background-color: rgb(187, 0, 0);
+}
+
+.yellow {
+    background-color: rgb(253, 228, 0);
+}
+
+.container {
+    width: 230px;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(52, 0, 194, 0.4);
+    transition: all .5s ease;
+}
+
+.container__animation {
+    animation: container-animation .6s ease infinite alternate;
+}
+
+.container__ganaste {
+    animation: container-ganaste 2s ease;
+}
+
+@keyframes container-animation {
+    from {
+        background-color: rgba(52, 0, 194, 0.4);
+    }
+
+    to {
+        background-color: rgba(52, 0, 194, 0.6);
+    }
+}
+
+@keyframes container-ganaste {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.each__position {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border-radius: 10px;
+    outline: 1.2px dashed rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0.459);
+    transition: background-color .2s ease;
+}
+
+.hover {
+    background-color: rgba(255, 255, 255, 0.30);
+}
+
+@media screen and (max-width: 970px) {
+    .overall__container {
+        flex-direction: column-reverse;
+    }
+
+    .boxes {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
